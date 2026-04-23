@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 
 const router = Router();
 
-router.get("/", async (req, res) => {
+router.get("/balance", async (req, res) => {
   const token = req.cookies.user;
 
   if (!token) {
