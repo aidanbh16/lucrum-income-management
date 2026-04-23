@@ -1,8 +1,10 @@
 import express from "express";
 import cors from "cors";
 import { env } from "./config/env";
+import cookieParser from "cookie-parser";
 
-import balance from "./routes/balance.route"
+import getBalance from "./routes/balance.route"
+import updateBalance from "./routes/update.route"
 
 const app = express();
 
@@ -15,7 +17,7 @@ app.use(cors({
     origin: (origin, callback) => {
         if (!origin) return callback(null, true);
         if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
+            return callback(null, true);
         }
 
         return callback(new Error("Not allowed by CORS"));
@@ -23,8 +25,10 @@ app.use(cors({
     credentials: true,
 }));
 app.use(express.json());
+app.use(cookieParser());
 
-app.use("/income", balance)
+app.use("/income", getBalance)
+app.use("/income", updateBalance)
 
 app.get("/", (req, res) => {
     res.send("Lucrum Income Management System is running");
