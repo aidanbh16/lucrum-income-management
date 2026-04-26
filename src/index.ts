@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 
 import getBalance from "./routes/balance.route"
 import updateBalance from "./routes/update.route"
+import expensesRoute from "./routes/expenses.route"
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.use(cookieParser());
 
 app.use("/income", getBalance)
 app.use("/income", updateBalance)
+app.use("/expenses", expensesRoute)
 
 app.get("/", (req, res) => {
     res.send("Lucrum Income Management System is running");
