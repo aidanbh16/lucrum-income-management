@@ -1,19 +1,21 @@
-# Lucrum Income Management Service
+# Lucrum Income Management System
 
-This repository contains the Income Management Service (IMS) for Lucrum.  
+This repository contains the Income Management System (IMS) for Lucrum.  
 It is an Express-based backend responsible for managing user income and expenses.
+
+The IMS allows users to set and track their monthly income, create recurring and variable expenses, and allocate their income across different spending categories. Recurring expenses persist month to month while variable expenses are automatically reset at the start of each month.
 
 ---
 
 ## Overview
 
-The service provides REST API endpoints for:
+The system provides REST API endpoints for:
 
 - Retrieving the authenticated user's income balance
 - Updating the authenticated user's income balance
 - Creating, retrieving, updating, and deleting expenses
 
-Authentication is handled via JWT tokens stored in HTTP-only cookies, shared with the Account Management Service.
+Authentication is handled via JWT tokens stored in HTTP-only cookies, shared with the Account Management System.
 
 ---
 
