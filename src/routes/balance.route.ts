@@ -16,8 +16,8 @@ router.get("/balance", async (req, res) => {
     const decoded = jwt.verify(token, env.JWT_SECRET!) as { userId: string };
 
     const result = await pool.query(
-      ` SELECT current_balance 
-        FROM "income-management" 
+      ` SELECT current_balance
+        FROM "income-management"
         WHERE user_id = $1`,
       [decoded.userId]
     );
