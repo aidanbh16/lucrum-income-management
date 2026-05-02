@@ -1,9 +1,6 @@
 # Lucrum Income Management System
 
-This repository contains the Income Management System (IMS) for Lucrum.  
-It is an Express-based backend responsible for managing user income and expenses.
-
-The IMS allows users to set and track their monthly income, create recurring and variable expenses, and allocate their income across different spending categories. Recurring expenses persist month to month while variable expenses are automatically reset at the start of each month.
+This repository contains the Income Management Service (IMS) for Lucrum, a personal finance management application. Built with Node.js, Express, and TypeScript, it is responsible for managing each user's income and expenses. Users can set and update their monthly income balance, create recurring and variable expenses, and allocate income across different spending categories. Recurring expenses persist month to month, while variable expenses are automatically reset at the start of each month. All routes are protected — each request reads the JWT from the shared `user` HTTP-only cookie set by the Account Management Service, verifies it, and scopes every database query to the authenticated user. The service connects to PostgreSQL via a connection pool and uses parameterized queries throughout.
 
 ---
 
